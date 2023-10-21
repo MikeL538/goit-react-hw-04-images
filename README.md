@@ -12,8 +12,7 @@ https://mikel538.github.io/goit-react-hw-04-images/
 
 ## Installation
 
-1. Clone this repository to your local machine: git clone
-   https://github.com/your-username/react-image-gallery.git
+1. Clone this repository to your local machine: git clone https://github.com/MikeL538/goit-react-hw-04-images.git
 
 2. Navigate to the project directory: cd react-image-gallery
 
@@ -21,8 +20,11 @@ https://mikel538.github.io/goit-react-hw-04-images/
 
 ## Usage
 
-1. Create .env file in root folder and add line "REACT_APP_ApiKey=YOUR_KEY".
+1. *As this is student project this step can be skipped as author's key is used.
+   {
+   Create .env file in root folder and add line "REACT_APP_ApiKey=YOUR_KEY".
    Change "YOUR_KEY" with your key.
+   }
 
 2. Run the application in development mode: npm start The application will be
    launched at http://localhost:3000 and will be accessible in your web browser.
