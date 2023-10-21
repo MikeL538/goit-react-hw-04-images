@@ -4,7 +4,9 @@ import { Spinner } from 'components/Loader/Loader';
 import axios from 'axios';
 
 export const ImageGalleryItem = ({ searchTerm, page }) => {
-  const ApiKey = process.env.REACT_APP_ApiKey;
+  // In non-student project .env would be used for keys.
+  // const ApiKey = process.env.REACT_APP_ApiKey;
+  const ApiKey = '38531038-07b18ea2bd70e8e8bef0f3931';
   const [images, setImages] = useState([]);
   const [siteLoaded, setSiteLoaded] = useState(false);
 
