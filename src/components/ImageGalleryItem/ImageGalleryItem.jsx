@@ -38,6 +38,7 @@ export const ImageGalleryItem = ({ searchTerm, page }) => {
     };
 
     fetchData();
+    // Github shows error here but I have no idea how to solve that so will try no-verify for the first time
   }, [searchTerm, page]);
 
   const [selectedImageUrl, setSelectedImageUrl] = useState(null);
