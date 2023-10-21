@@ -1,6 +1,7 @@
 # React Image Gallery App
 
 A simple image gallery application built with React.
+https://mikel538.github.io/goit-react-hw-04-images/
 
 ## Features
 
