@@ -19,7 +19,7 @@ export const App = () => {
 
   return (
     <>
-      <Searchbar onSearch={handleSearch} />
+      <Searchbar className={css.class} onSearch={handleSearch} />
       <ImageGallery searchTerm={searchTerm} page={page} />
       <LoadMoreButton onLoadMore={handleLoadMore} />
     </>
