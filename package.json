@@ -1,8 +1,8 @@
 {
-  "name": "goit-react-hw-04-image-finder",
+  "name": "goit-react-hw-04-images",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://mikel538.github.io/goit-react-hw-04-image-finder/",
+  "homepage": "https://mikel538.github.io/goit-react-hw-04-images/",
   "dependencies": {
     "axios": "^1.5.1",
     "eslint-config-react-app": "^7.0.1",
