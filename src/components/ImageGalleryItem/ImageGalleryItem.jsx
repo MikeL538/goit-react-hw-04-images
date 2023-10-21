@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { Modal } from 'components/Modal/Modal';
 import { Spinner } from 'components/Loader/Loader';
 import axios from 'axios';
@@ -8,38 +8,33 @@ export const ImageGalleryItem = ({ searchTerm, page }) => {
   const [images, setImages] = useState([]);
   const [siteLoaded, setSiteLoaded] = useState(false);
 
-  const fetchImageData = async () => {
+  const fetchImageData = useCallback(async () => {
     try {
       const response = await axios.get(
         `https://pixabay.com/api/?q=${searchTerm}&page=${page}&key=${ApiKey}&image_type=photo&orientation=horizontal&per_page=12`
       );
       setImages(prevImages => {
-        // Prevent double images load from page 1 after website loads
         if (!siteLoaded) {
           setSiteLoaded(true);
           return [...response.data.hits];
         }
-        // If loaded and Load More button clicked
         return [...prevImages, ...response.data.hits];
       });
     } catch (error) {
       console.error('Error fetching image data:', error);
     }
-  };
+  }, [searchTerm, page, siteLoaded, ApiKey]);
 
-  // UseEffect change to async
   useEffect(() => {
     const fetchData = async () => {
       if (searchTerm && page === 1) {
-        // Clear the images only when a new search is performed
         setImages([]);
       }
       await fetchImageData();
     };
 
     fetchData();
-    // Github shows error here but I have no idea how to solve that so will try no-verify for the first time
-  }, [searchTerm, page]);
+  }, [searchTerm, page, fetchImageData]);
 
   const [selectedImageUrl, setSelectedImageUrl] = useState(null);
 
