@@ -1,0 +1,36 @@
+form {
+  align-items: center;
+  background-color: rgb(41, 80, 152);
+  display: flex;
+  justify-content: center;
+  padding: 5px 0;
+  position: fixed;
+  width: 100vw;
+  top: 0;
+  opacity: 0.4;
+  z-index: 10;
+  &:hover,
+  &:focus-within {
+    opacity: 1;
+  }
+
+  > input {
+    border-radius: 5px;
+    border: 2px solid gold;
+    font-size: 20px;
+    padding: 0 57px 0 5px;
+    width: 300px;
+  }
+
+  > button {
+    background-color: burlywood;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 700;
+    margin-left: -57px;
+    margin-top: -2px;
+    padding: 5px;
+  }
+}
