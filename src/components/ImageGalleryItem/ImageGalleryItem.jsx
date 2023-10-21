@@ -27,13 +27,17 @@ export const ImageGalleryItem = ({ searchTerm, page }) => {
     }
   };
 
+  // UseEffect change to async
   useEffect(() => {
-    if (searchTerm && page === 1) {
-      // Clear the images only when a new search is performed
-      setImages([]);
-    }
+    const fetchData = async () => {
+      if (searchTerm && page === 1) {
+        // Clear the images only when a new search is performed
+        setImages([]);
+      }
+      await fetchImageData();
+    };
 
-    fetchImageData();
+    fetchData();
   }, [searchTerm, page]);
 
   const [selectedImageUrl, setSelectedImageUrl] = useState(null);
@@ -48,8 +52,6 @@ export const ImageGalleryItem = ({ searchTerm, page }) => {
 
       {images.map(img => (
         <li key={img.id}>
-          {/* Czy tutaj lepiej żeby było <a> czy może <button>? A może coś jeszcze innego?
-          Jeśli <a> to czy coś dawać w href by eslint nie pokazywał błędu czy zigonorować? */}
           <button onClick={() => handleImageClick(img.largeImageURL)}>
             <img src={img.webformatURL} alt={img.tags} loading="lazy" />
           </button>
